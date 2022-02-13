@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "8ab19922-b45d-41b3-a40d-e3e287b35e30",
+		"name": "Udacity-Image-Resize",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get a Resized Image",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/images?fileName=fjord.jpg&width=50&height=50",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"images"
+					],
+					"query": [
+						{
+							"key": "fileName",
+							"value": "fjord.jpg"
+						},
+						{
+							"key": "width",
+							"value": "50"
+						},
+						{
+							"key": "height",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
