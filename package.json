@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
     "build": "npx tsc",
-    "lint": "eslint 'src/*.ts'",
-    "prettier": "prettier --config .prettierrc 'src/*.ts' --write",
+    "lint": "eslint 'src/**/*.ts' 'spec/**/*.ts'",
+    "prettier": "prettier --config .prettierrc 'src/**/*.ts' 'spec/**/*.ts' --write",
     "start": "nodemon src/index.ts"
   },
   "repository": {
@@ -24,18 +24,26 @@
   "devDependencies": {
     "@typed/node": "^6.7.0",
     "@types/express": "^4.17.13",
+    "@types/fs-extra": "^9.0.13",
+    "@types/jasmine": "^3.10.3",
+    "@types/resize-img": "^2.0.1",
+    "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^5.11.0",
     "@typescript-eslint/parser": "^5.11.0",
     "eslint": "^8.8.0",
-    "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "jasmine": "^4.0.2",
+    "jasmine-spec-reporter": "^7.0.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1",
+    "supertest": "^6.2.2",
     "ts-node": "^10.5.0",
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "fs-extra": "^10.0.0",
+    "resize-img": "^2.0.0"
   }
 }

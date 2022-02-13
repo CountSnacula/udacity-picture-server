@@ -2,9 +2,6 @@
     "env": {
         "es2021": true
     },
-    "extends": [
-        "google"
-    ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": "latest",
@@ -14,5 +11,14 @@
         "@typescript-eslint"
     ],
     "rules": {
-    }
+        "arrow-body-style": "error",
+        "arrow-spacing": "error",
+        "eol-last": "error",
+        "camelcase": "error",
+        "indent": ["error", 2],
+        "strict": "error"
+    },
+    "extends": [
+        "prettier"
+    ]
 }
