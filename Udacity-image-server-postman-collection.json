@@ -11,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/images?fileName=fjord.jpg&width=50&height=50",
+					"raw": "http://localhost:3000/api/images?fileName=fjord.jpg&width=50&height=50",
 					"protocol": "http",
 					"host": [
 						"localhost"

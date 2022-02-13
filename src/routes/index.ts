@@ -2,7 +2,7 @@ import express, { Request, Response } from 'express';
 import loadImage from '../services/images/load.images';
 
 const routes = express.Router();
-routes.get('/', async (req: Request, resp: Response) => {
+routes.get('/images', async (req: Request, resp: Response) => {
   console.log(req.url);
 
   const fileName = req.query.fileName;

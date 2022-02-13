@@ -22,7 +22,7 @@ Both options will start an express server which will listen on port 3000.
 ### Endpoit
 
 The server constains a single GET endpoint.  
-__Path__ `/images`  
+__Path__ `/api/images`  
 With following query parameter:
 
 | Parameter name | Description | Required | Example     |
@@ -34,7 +34,7 @@ With following query parameter:
 ### Example
 
 *
-Calling [http://localhost:3000/images?fileName=fjord.jpg&width=50&height=50](http://localhost:3000/images?fileName=fjord.jpg&width=50&height=50)
+Calling [http://localhost:3000/api/images?fileName=fjord.jpg&width=50&height=50](http://localhost:3000/api/images?fileName=fjord.jpg&width=50&height=50)
 * `curl --request GET --url 'http://localhost:3000/images?fileName=fjord.jpg&width=50&height=50'`
 * Using postman and importing the
   collection [Udacity-image-server-postman-collection.json](./Udacity-image-server-postman-collection.json)
