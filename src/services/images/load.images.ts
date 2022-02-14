@@ -9,7 +9,6 @@ const IMAGE_ORIGINAL = path.resolve(__dirname, IMAGE_ROOT, 'original');
 const IMAGE_RESIZED = path.resolve(__dirname, IMAGE_ROOT, 'resized');
 
 function resolveImagePath(name: string): string {
-  console.log(IMAGE_ORIGINAL);
   return path.join(IMAGE_ORIGINAL, name);
 }
 
@@ -46,13 +45,11 @@ async function loadFile(path: string): Promise<Buffer> {
 
 async function loadBaseFile(name: string): Promise<Buffer> {
   const filePath = resolveImagePath(name);
-  console.log(`File path ${filePath}`);
   return loadFile(filePath);
 }
 
 async function saveResized(filePath: string, file: Buffer): Promise<void> {
   await ensureDir(IMAGE_RESIZED);
-  console.log(`Creating resized file. Path ${filePath}`);
   writeFileSync(filePath, file);
 }
 
@@ -68,7 +65,6 @@ const loadImage = async (
 
   let file: Buffer;
   if (!width && !height) {
-    console.log('No Resize loading base file.');
     file = await loadBaseFile(name);
   } else {
     const resizedFileName = getResizedFileName(name, width, height);
@@ -77,12 +73,10 @@ const loadImage = async (
       path.join(IMAGE_RESIZED, resizedFileName),
     );
     if (!existResize) {
-      console.log('Loading base file for resizing');
       file = await loadBaseFile(name);
       file = await resize(file, width, height);
       await saveResized(resizedFilePath, file);
     } else {
-      console.log('ResizedFile found loading it.');
       file = await loadFile(resizedFilePath);
     }
   }

@@ -2,9 +2,7 @@ import express, { Request, Response } from 'express';
 import loadImage from '../services/images/load.images';
 
 const routes = express.Router();
-routes.get('/images', async (req: Request, resp: Response) => {
-  console.log(req.url);
-
+routes.get('/images', async (req: Request, resp: Response): Promise<void> => {
   const fileName = req.query.fileName;
   const height = req.query.height;
   const width = req.query.width;
@@ -17,12 +15,11 @@ routes.get('/images', async (req: Request, resp: Response) => {
     });
   }
 
-  console.log(`FileName: ${fileName} hight: ${height} width: ${width}`);
   try {
     const imgBuffer = await loadImage(
       fileName as string,
-      parseInt(width as string),
-      parseInt(width as string),
+      !!width ? parseInt(width as string) : undefined,
+      !!height ? parseInt(height as string) : undefined,
     );
     resp.contentType('image/jpg');
     resp.send(imgBuffer);

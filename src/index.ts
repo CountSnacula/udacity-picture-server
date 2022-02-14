@@ -6,7 +6,7 @@ const port = 3000;
 
 app.use('/api', routes);
 
-const server = app.listen(port, () => {
+const server = app.listen(port, (): void => {
   console.log(`Server started on port ${port}`);
 });
 
