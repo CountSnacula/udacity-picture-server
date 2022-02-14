@@ -1,7 +1,7 @@
 import loadImage from '../../src/services/images/load.images';
 import { readFileSync } from 'fs';
 import * as path from 'path';
-import {unlinkSync} from "fs-extra";
+import { unlinkSync } from 'fs-extra';
 
 describe('Load Image', () => {
   it('should throw an error when the image is not found.', async () => {
@@ -42,10 +42,15 @@ describe('Load Image', () => {
       .then((fileBuffer) => {
         expect(fileBuffer).toBeTruthy();
         expect(fileBuffer.length).toBeLessThan(oriImage.length);
-        const resizedPath = path.join(__dirname, '..', '..', 'images', 'resized', `${width}_${height}_${imgName}`);
-        const resizedImage = readFileSync(
-          resizedPath,
+        const resizedPath = path.join(
+          __dirname,
+          '..',
+          '..',
+          'images',
+          'resized',
+          `${width}_${height}_${imgName}`,
         );
+        const resizedImage = readFileSync(resizedPath);
         expect(resizedImage).toBeTruthy();
         unlinkSync(resizedPath);
       })
